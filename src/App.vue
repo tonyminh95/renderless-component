@@ -1,28 +1,26 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <renderless-tags-input>
+        <div slot-scope="{}" class="tags-input">
+        <span class="tags-input-tag">
+            <span>Testing</span>
+            <span>Design</span>
+            <button type="button" class="tags-input-remove">&times;</button>
+        </span>
+        <input class="tags-input-text" placeholder="Add tag...">
+        </div>
+    </renderless-tags-input>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+    import RenderlessTagsInput from './components/RenderlessTagsInput'
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+    export default {
+        components: { RenderlessTagsInput },
+
+        data() {
+            return {
+                tags: ['Testing', 'Design']
+            }
+        }
+    }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
